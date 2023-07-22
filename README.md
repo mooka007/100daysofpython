@@ -1,5 +1,5 @@
-## Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!
 # 100daysofpython
+## Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!
 
 ## What you'll learn
  * You will master the Python programming language by building 100 unique projects over 100 days.
