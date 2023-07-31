@@ -1,18 +1,6 @@
-#1. Create a greeting for your program.
 
-#2. Ask the user for the city that they grew up in.
+import random
+states_of_america = ["Delaware", "Pennsylvania", "New Jersey", "Georgia", "Connecticut", "Massachusetts", "Maryland", "South Carolina", "New Hampshire", "Virginia", "New York", "North Carolina", "Rhode Island", "Vermont", "Kentucky", "Tennessee", "Ohio", "Louisiana", "Indiana", "Mississippi", "Illinois", "Alabama", "Maine", "Missouri", "Arkansas", "Michigan", "Florida", "Texas", "Iowa", "Wisconsin", "California", "Minnesota", "Oregon", "Kansas", "West Virginia", "Nevada", "Nebraska", "Colorado", "North Dakota", "South Dakota", "Montana", "Washington", "Idaho", "Wyoming", "Utah", "Oklahoma", "New Mexico", "Arizona", "Alaska", "Hawaii"]
 
-#3. Ask the user for the name of a pet.
-
-#4. Combine the name of their city and pet and show them their band name.
-
-#5. Make sure the input cursor shows on a new line:
-
-# Solution: https://replit.com/@appbrewery/band-name-generator-end
-
-
-#answer:
-print("Welcome to the band name generator.")
-city = input("Which city did you grow up in?\n")
-pet = input("What is the name of a pet?\n")
-print("Your band name could be " + city + " " + pet)
+person = random.choice(states_of_america)
+print(person)
