@@ -1,22 +1,24 @@
 import random
 
-word_list  = ["hmidalamba", "9assamBoT9achar","statia"]
-chosen_word = random.choice(word_list).lower()
+words = ["btata", "maticha", "gar3a", "falfla"]
+chosen_word = random.choice(words).lower()
 
+# blank list to check if its the right letter or not
 display = []
-for _ in range(len(chosen_word)):
-    display += "_"
+for letter in range(len(chosen_word)):
+    display += "-"
 
-end_of_game = False
-
-while not end_of_game:
-    guess = input("Guess a letter: ").lower()
+# loop to check if everything is right or not
+theEnd = False
+while not theEnd:
+    guess = input("Guess the letters: ").lower()
     for position in range(len(chosen_word)):
         letter = chosen_word[position]
         if letter == guess:
             display[position] = letter
     print(display)
 
-    if "_" not in display:
-        end_of_game = True
-        print("You win.")
+    if "-" not in display:
+        theEnd = True
+        print("You win! Congratulation :)")
+    
