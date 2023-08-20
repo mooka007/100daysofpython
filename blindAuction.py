@@ -11,42 +11,6 @@ logo = '''
                        .-------------.
                       /_______________\\
 '''
-# import os
- 
-# # Clearing the Screen
-
-
-
-# print(logo)
-
-# bids = {}
-# bidding_finished = False
-
-# def highest_bidder(bid_record):
-#     high_bid = 0
-#     winner = ""
-#     for bidder in bid_record:
-#         amount = bid_record[bidder]
-#         if amount > high_bid:
-#             high_bid = amount
-#             winner = bidder
-#     print(f"The winner is {winner} with a bid of ${high_bid}")
-
-
-
-
-# while not bidding_finished:
-#     name = input("what is your name ? ")
-#     price = input("what is your price ? ")
-#     bids[name] = price
-#     input("are there any other bidders ? Type Yes or No ")
-#     continuee = input("are there any other bidders ? Type Yes or No ")
-#     if continuee == "No":
-#         bidding_finished = True
-#         highest_bidder(bids)
-#     elif continuee == "Yes":
-#         os.system('clear')
-
 
 import os
 
@@ -55,16 +19,17 @@ print(logo)
 bids = {}
 bidding_finished = False
 
-def find_highest_bidder(bidding_record):
-  highest_bid = 0
+def find_highest_bidder(bidRecord):
+  highBid = 0
   winner = ""
-  # bidding_record = {"Angela": 123, "James": 321}
-  for bidder in bidding_record:
-    bid_amount = bidding_record[bidder]
-    if bid_amount > highest_bid: 
-      highest_bid = bid_amount
+  # bidRecord = {"Angela": 123, "James": 321}
+  for bidder in bidRecord:
+    amount = bidRecord[bidder]
+    if amount > highBid: 
+      highBid = amount
       winner = bidder
-  print(f"The winner is {winner} with a bid of ${highest_bid}")
+  print(f"The winner is {winner} with a bid of ${highBid}")
+  
 
 while not bidding_finished:
   name = input("What is your name?: ")
@@ -77,4 +42,3 @@ while not bidding_finished:
   elif should_continue == "yes":
     os.system('cls')
   
-
