@@ -39,28 +39,32 @@ op = {
     "/" : div 
 }
 history = {}
-while True:
+loop = True
+while loop:
     num1 = int(input("What is the first number? (Enter 0 to exit): "))
     if num1 == 0:
         break
-
-    pickedSymbol = input("Enter the operation symbol: ")
-    if pickedSymbol not in op:
-        print("Invalid operation symbol. Please try again.")
-        break
-    num2 = int(input("What is the second number? : "))
-    calculation_func = op.get(pickedSymbol)
-    if calculation_func:
-        answer = calculation_func(num1, num2)
-        equation = f"{num1} {pickedSymbol} {num2}"
+    shouldContinue = True
+    while shouldContinue:
+        pickedSymbol = input("Enter the operation symbol: ")
+        if pickedSymbol not in op:
+            print("Invalid operation symbol. Please try again.")
+            break
+        num2 = int(input("What is the second number? : "))
+        calculation_func = op.get(pickedSymbol)
+        if calculation_func:
+            answer = calculation_func(num1, num2)
+            equation = f"{num1} {pickedSymbol} {num2}"
+            print(f"{equation} = {answer}")
+            history[equation] = answer    
+        else:
+            print("Invalid operation symbol.")
+            break
+        if input(f"Type 'y' to continue calculating with {answer}, or Type 'n' to start a new calculation: ") == 'y':
+            num1 = answer
+        else:
+            shouldContinue = False
+    print("History of calculations:")
+    for equation, answer in history.items():
         print(f"{equation} = {answer}")
-        history[equation] = answer
-    else:
-        print("Invalid operation symbol.")
-        break
-
-print("History of calculations:")
-for equation, answer in history.items():
-    print(f"{equation} = {answer}")
-
-
+    loop = False
