@@ -38,13 +38,106 @@ op = {
     "*" : mult,
     "/" : div 
 }
+history = {}
+while True:
+    num1 = int(input("What is the first number? (Enter 0 to exit): "))
+    if num1 == 0:
+        break
 
-num1 = int(input("what is the first number ? : "))
+    pickedSymbol = input("Enter the operation symbol: ")
+    if pickedSymbol not in op:
+        print("Invalid operation symbol. Please try again.")
+        break
+    num2 = int(input("What is the second number? : "))
+    calculation_func = op.get(pickedSymbol)
+    if calculation_func:
+        answer = calculation_func(num1, num2)
+        equation = f"{num1} {pickedSymbol} {num2}"
+        print(f"{equation} = {answer}")
+        history[equation] = answer
+        pass
+    else:
+        print("Invalid operation symbol.")
+        break
 
-for symbol in op:
-    pickedSymbole = input("The Operation Symbol : ")
-    num2 = int(input("what is the second number ? : "))
-    calculation_func = op[pickedSymbole]
-    answer = calculation_func(num1, num2)
+print("History of calculations:")
+for equation, result in history.items():
+    print(f"{equation} = {result}")
 
-    print(f"{num1} {pickedSymbole} {num2} = {answer}")
+
+
+
+# //////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def ad(n1, n2):
+#     return n1 + n2
+
+# def sub(n1, n2):
+#     return n1 - n2
+
+# def mult(n1, n2):
+#     return n1 * n2
+
+# def div(n1, n2):
+#     return n1 / n2
+
+# op = {
+#     "+": ad,
+#     "-": sub,
+#     "*": mult,
+#     "/": div
+# }
+
+# history = {}
+
+# while True:
+#     num1 = int(input("What is the first number? (Enter 0 to exit): "))
+#     if num1 == 0:
+#         break
+
+#     while True:
+#         pickedSymbol = input("Enter the operation symbol: ")
+#         if pickedSymbol not in op:
+#             print("Invalid operation symbol. Please try again.")
+#         else:
+#             break
+
+#     num2 = int(input("What is the second number? : "))
+#     calculation_func = op[pickedSymbol]
+#     answer = calculation_func(num1, num2)
+#     equation = f"{num1} {pickedSymbol} {num2}"
+
+#     print(f"{equation} = {answer}")
+
+#     history[equation] = answer
+
+# print("History of calculations:")
+# for equation, result in history.items():
+#     print(f"{equation} = {result}")
