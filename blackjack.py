@@ -22,20 +22,27 @@ def calculate_score(cards):
 
 user_cards = []
 computer_cards = []
+is_game_over = False
 
 for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
 
+while not is_game_over:
+    # if the cmpt or user has a blackjack(0) or if the user's score is over 21
+    # then end the game 
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
 
-# if the cmpt or user has a blackjack(0) or if the user's score is over 21
-# then end the game 
-user_score = calculate_score(user_cards)
-computer_score = calculate_score(computer_cards)
-
-print(f"Your cards : {user_cards}, current Score: {user_score}")
-print(f"Computer's first card : {computer_cards[0]}")
+    print(f"Your cards : {user_cards}, current Score: {user_score}")
+    print(f"Computer's first card : {computer_cards[0]}")
 
 
-if user_score == 0 or computer_score == 0 or user_score > 21:
-    is_game_over = True
+    if user_score == 0 or computer_score == 0 or user_score > 21:
+        is_game_over = True
+    else:
+        user_should_deal = input("Type 'y' to get another card, Type 'n' to pass: ")
+        if user_should_deal == "y":
+            user_cards.append(deal_card())
+        else:
+            is_game_over = True
