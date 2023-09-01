@@ -1,5 +1,5 @@
 import random
-
+import os
 logo = """   
         ,-.-.  ,-,--.  
  ,--.-./=/ ,/,-.'-  _\ 
@@ -98,8 +98,11 @@ def check_answer(guess, a_followers, b_followers):
 
 score = 0
 repeat = True
+account_b = random.choice(data)
+
 while repeat:
-    account_a = random.choice(data)
+    # making account at position b become the next account at position A
+    account_a = account_b
     account_b = random.choice(data)
     if account_a == account_b:
         account_b = random.choice(data)
@@ -115,6 +118,9 @@ while repeat:
     b_follower_count = account_b["follower_count"]
 
     is_correct = check_answer(guess, a_follower_count, b_follower_count)
+
+    # clear the console once your answer is right
+    os.system('cls')
 
     # giving a feedback on their guess
     if is_correct:
