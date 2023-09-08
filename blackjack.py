@@ -52,6 +52,7 @@ def compare(user_score, computer_score):
         return "You Win :D"
     else:
         return "Computer wins :("
+       
 def play_game():
     print(logo)
     user_cards = []
@@ -95,4 +96,4 @@ def play_game():
 
 while input("Do you want to play a Game of BlackJack? Type 'y' or 'n': ") == "y":
     os.system('cls')
-    play_game()
+    play_game() 

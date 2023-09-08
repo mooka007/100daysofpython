@@ -19,7 +19,6 @@ logo = """
 print(logo)
 
 
-
 def ad(n1, n2):
     return n1 + n2
 
@@ -41,7 +40,7 @@ op = {
 history = {}
 loop = True
 while loop:
-    num1 = int(input("What is the first number? (Enter 0 to exit): "))
+    num1 = float(input("What is the first number? (Enter 0 to exit): "))
     if num1 == 0:
         break
     shouldContinue = True
@@ -50,7 +49,7 @@ while loop:
         if pickedSymbol not in op:
             print("Invalid operation symbol. Please try again.")
             break
-        num2 = int(input("What is the second number? : "))
+        num2 = float(input("What is the second number? : "))
         calculation_func = op.get(pickedSymbol)
         if calculation_func:
             answer = calculation_func(num1, num2)

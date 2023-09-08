@@ -14,8 +14,6 @@ def check_answer(guess, answer, turns):
         return turns - 1
     else:
         print(f"Nice Shot!")
-    
-
 def set_difficulty():
     level = input("Choose a difficulty. Type 'easy' or 'hard': ")
     if level == "easy":

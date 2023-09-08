@@ -126,6 +126,6 @@ while repeat:
     if is_correct:
         score += 1
         print(f"You're Right ! Hell Ya \m/, Current Score : {score}")
-    else:
+    else: 
         repeat = False
         print(f"Sorry Wrong Answer ( . )( . ), Your Final Score is {score}")
